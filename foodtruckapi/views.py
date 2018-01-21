@@ -14,6 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+print (BASE_DIR)
 
 
 class Apis():
@@ -21,7 +22,7 @@ class Apis():
 
 	def __init__(self):
 
-		dataFile=BASE_DIR+"\\data\\Mobile_Food_Facility_Permit.json"
+		dataFile=BASE_DIR+"/data/Mobile_Food_Facility_Permit.json"
 		# Transform json input to python objects
 		with open(dataFile,"r") as input_file:
 			self.truck_data = json.load(input_file)
