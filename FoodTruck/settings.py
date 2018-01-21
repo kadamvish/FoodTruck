@@ -25,7 +25,7 @@ SECRET_KEY = '9^0f8m*v$m5f#&p%xh86kz0zkjwr=8ati0r(^c5s+3v_aaw#_n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['192.168.2.12']
+ALLOWED_HOSTS = ['192.168.2.12','dry-wave-60344.herokuapp.com']
 
 CORS_ORIGIN_ALLOW_ALL=True
 
