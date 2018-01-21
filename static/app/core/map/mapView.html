@@ -1,0 +1,55 @@
+<div class="row" >
+
+<div class="col-md-6">
+Enter an address (default location taken to be-1800 FOLSOM ST) :<br/>
+  <input places-auto-complete size=50 ng-model="MapCtrl.address" component-restrictions="{country:'us'}"
+    types="address" on-place-changed="MapCtrl.placeChanged()" class="form-control" /> <br/>
+
+<ng-map default-style="true" zoom="13" center="(37.7678524427181, -122.416104892532)"
+        on-center-changed="centerCustomMarker()">
+        <marker position="{{truck.Address}}" on-click="MapCtrl.showDetail(truck)" ng-repeat="truck in MapCtrl.nearbyTrucks"  id='{{truck.Address}}'></marker>
+
+        <info-window id="detail-iw" >
+        <div ng-non-bindable="">
+        Name: {{MapCtrl.selectedTruck.Applicant}}<br/>
+        Location: {{MapCtrl.selectedTruck.Address}}<br/>
+        </div>
+      </info-window>
+</ng-map>
+</div>
+
+<div class="col-md-6">
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Nearby Food Trucks</h3>
+    </div>
+    <div class="panel-body">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+            <input id="search"  class="form-control" placeholder="Filter by location/time/food items..." ng-model="search">
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped table-fixed">
+                <thead>
+                    <tr>
+                        <th class="col-xs-1">No.</th>
+                        <th class="col-xs-3">Food Truck</th>
+                        <th class="col-xs-2">Timings</th>
+                        <th class="col-xs-4">Food Items</th>
+                    </tr>
+                </thead>
+                <tbody >
+                <tr ng-repeat="truck in MapCtrl.nearbyTrucks| filter: search" class="repeat-animation">
+                    <td >{{$index + 1}}. </td>
+                    <td><span >{{truck.Applicant}}<br/>{{truck.Address}}</span></td>
+                    <td><span >{{truck.dayshours}}</span></td>
+                    <td><span >{{truck.FoodItems}}</span></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
+
+</div>
