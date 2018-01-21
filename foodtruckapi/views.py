@@ -16,7 +16,7 @@ class Apis():
 
 	def __init__(self):
 
-		dataFile="F:/FoodTruck/data/Mobile_Food_Facility_Permit.json"
+		dataFile="../data/Mobile_Food_Facility_Permit.json"
 		# Transform json input to python objects
 		with open(dataFile,"r") as input_file:
 			self.truck_data = json.load(input_file)
