@@ -123,9 +123,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 # MEDIA_ROOT = 'F:/FoodTruck/frontend'
+STATIC_ROOT=os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT= os.path.join(BASE_DIR, 'frontend')
 STATICFILES_DIRS = (
    os.path.join(BASE_DIR, 'frontend'),
 )
-
+# print(os.path.join(BASE_DIR, 'frontend'))
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
