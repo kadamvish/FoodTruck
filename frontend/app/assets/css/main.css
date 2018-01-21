@@ -1,0 +1,18 @@
+
+.form-control[disabled], .form-control[readonly], .fieldset[disabled], .form-control {
+    cursor: pointer;
+    background-color: white;
+}
+
+table thead {
+  display: block;
+}
+table tbody {
+  height: 400px;
+  display: block;
+  overflow-y: scroll;
+}
+
+ng-map {
+	height:500px !important;
+}
