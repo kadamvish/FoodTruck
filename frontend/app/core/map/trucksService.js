@@ -10,7 +10,7 @@
 
             function getTrucks(location) {
                 return $http({ method: 'POST',
-                                url: 'https://dry-wave-60344.herokuapp.com/getTrucks/',
+                                url: 'http://dry-wave-60344.herokuapp.com/getTrucks/',
                                 headers :{'Content-Type': 'application/json'},
                                 data: { "location":location}
                         })
